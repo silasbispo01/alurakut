@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import NextLink from 'next/link';
 
+
 const BASE_URL = 'http://alurakut.vercel.app/';
 const v = '1';
 
@@ -24,7 +25,7 @@ export function AlurakutMenu({ githubUser }) {
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
       <div className="container">
-        <AlurakutMenu.Logo src={`${BASE_URL}/logo.svg`} />
+        <AlurakutMenu.Logo>Malafaiakut</AlurakutMenu.Logo>
 
         <nav style={{ flex: 1 }}>
           {[{ name: 'Inicio', slug: '/'}, {name: 'Amigos', slug: '/amigos'}, {name: 'Comunidades', slug: '/comunidades'}].map((menuItem) => (
@@ -155,11 +156,16 @@ AlurakutMenu.Wrapper = styled.header`
     } 
   }
 `;
-AlurakutMenu.Logo = styled.img`
+AlurakutMenu.Logo = styled.h1`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d81d99;
   background-color: #ffffff;
   padding: 9px 14px;
   border-radius: 1000px;
   height: 34px;
+  font-family: 'Roboto';
 `;
 
 function AlurakutMenuProfileSidebar({ githubUser }) {
